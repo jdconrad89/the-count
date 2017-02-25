@@ -1,0 +1,116 @@
+a {
+  text-decoration: none;
+  color: #6CA6CD;
+  text-align: right;
+  font-family: Verdana;
+}
+
+.navbar {
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-self: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-image: image_url("the_count.png");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: center;
+}
+
+.navbar-brand:hover {
+  text-decoration: underline;
+  line-height: 1.5;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  align-self: center;
+  padding: none;
+  width: 100%;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open >
+a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background: none;
+}
+
+ul.nav, .navbar-nav {
+  margin: auto;
+  width: 100%;
+}
+
+div.list-inline {
+  display: block;
+  float: left;
+  text-decoration: none;
+}
+
+.list-group-item {
+  border: none;
+  text-decoration: none;
+  margin-right: auto;
+  background: none;
+  padding: inherit;
+}
+
+a.dropdown-toggle {
+  align-content: right;
+}
+
+div.avatar {
+  display: inline-flex;
+  float: right;
+}
+
+.img-circle {
+  width: 25%;
+  height: 80%;
+  margin-right: auto;
+  display: inline-flex;
+
+  &:active {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navbar .navbar-collapse .navbar-right > li:last-child {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .navbar .nav-collapse {
+    margin: 7.5px auto;
+    padding: 0;
+  }
+
+  .navbar .nav-collapse .navbar-form {
+    margin: 0;
+  }
+
+  .nav-collapse > li {
+    float: none;
+  }
+
+  .navbar.navbar-default .nav-collapse,
+  .navbar.navbar-inverse .nav-collapse {
+    transform: translate(-100%, 0px);
+  }
+
+  .navbar.navbar-default .nav-collapse.in,
+  .navbar.navbar-inverse .nav-collapse.in {
+    transform: translate(0px, 0px);
+  }
+
+  .navbar.navbar-default .nav-collapse.slide-down,
+  .navbar.navbar-inverse .nav-collapse.slide-down {
+    transform: translate(0px, -100%);
+  }
+
+  .navbar.navbar-default
+  .nav-collapse.in.slide-down,
+  .navbar.navbar-inverse
+  .nav-collapse.in.slide-down {
+    transform: translate(0px, 0px);
+  }
+}
