@@ -1,0 +1,25 @@
+<div class="card col-md-offset-4">
+  <div class="card-block">
+    <%= form_for @user do |f| %>
+      <div class="card-header">
+        <h6>Have an account? <%= link_to 'Log in' %> </h6>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :name, class:"form-control", placeholder: :name %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :email, class:"form-control", placeholder: :email %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, class:"form-control", placeholder: :password %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password_confirmation, class:"form-control", placeholder: "Re-enter password" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Sign me up!", class:'btn btn-success'  %>
+      <% end %>
+      <%= button_to "Log in with Facebook", facebook_login_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
