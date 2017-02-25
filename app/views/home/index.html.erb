@@ -1,0 +1,7 @@
+<%= form_tag :search, method: :get, class: "form-inline" do %>
+    <div class="form-group search-field">
+      <%= text_field_tag :q, "Search", class: "fomr-control", id: "Find Food" %>
+      <%= submit_tag "search", class: "btn btn-primary", id: "search " %>
+    </div>
+    <%end%>
+    <h7> ** For best results be as specific as you can in the type of food. For example specifiy the type of apple you want (Gala, Granny Smith, etc.) ** </h7>
