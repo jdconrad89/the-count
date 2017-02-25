@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   #### Oauth Singn up routes ####
   get '/auth/facebook',                   as: :facebook_login
   get 'auth/facebook/callback',           to: 'sessions#create'
+
+
+  #### Search Resources ####
+  get "/search",                          to: 'search#index', as: 'search'
 end
