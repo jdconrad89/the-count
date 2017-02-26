@@ -1,0 +1,9 @@
+<div class="container">
+<main class="recipe">
+  <section>
+      <p> <%= @recipe.name %></p>
+      <p> <%= @recipe.description %></p>
+      <%= button_to "Create a Recipe", new_recipe_path, class: "btn btn-primary", method: "get" %>
+  </section>
+</main>
+</div>
