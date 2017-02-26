@@ -22,6 +22,8 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'omniauth-facebook'
 gem 'nutritionix'
 gem 'bcrypt', '~> 3.1.7'
+gem 'simplecov', :require => false, :group => :test
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
