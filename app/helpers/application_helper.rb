@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def recipes?
-    !current_user.recipes.nil?
+    current_user.recipes.count == 0
   end
 end
