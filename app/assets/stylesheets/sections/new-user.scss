@@ -1,0 +1,17 @@
+div.card-block {
+  width: 50%;
+  border: 1px solid;
+  border-color: #F1EEEA;
+  flex: 1 1 auto;
+  background-color: white;
+
+  form.new_user {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+
+    h4.card-title {
+      color: black;
+    }
+  }
+}
