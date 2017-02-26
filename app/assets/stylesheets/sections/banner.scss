@@ -3,12 +3,11 @@
   width: 100%;
   height: 500px;
   text-align: center;
-  background: image_url("eat_healthy.jpg") no-repeat center;
+  background: image_url("granola.jpg") no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   background-size: cover;
-  opacity: 0.5;
 
 
 }
@@ -19,7 +18,8 @@
 }
 
 
-.headline h1 {
+.headline h7,
+h3 {
   font-family: Verdana;
   padding-bottom: 20px;
   color: white;
@@ -28,4 +28,9 @@
       1px -1px 0 #000,
       -1px 1px 0 #000,
       1px 1px 0 #000;
+
+}
+
+.form-group .search-field {
+  height: 75px;
 }
