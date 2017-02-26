@@ -8,20 +8,21 @@
 </div>
 <div class="collapse navbar-collapse" id="navbar-collapse-1">
   <ul class="nav navbar-nav">
-    <div class="list-inline pull-left">
-      <li class="list-group-item"><%= link_to "Explore" %></li>
-      <li class="list-group-item"><%= link_to "Start a project" %></li>
-    </div>
     <% if logged_in? %>
-      <li class="list-group-item"><%= link_to "Logout", session_path(current_user), method: 'delete' %></li>
+    <div class="list-inline pull-left">
+      <li class="list-group-item"><%= link_to "Home", root_path %></li>
     </div>
+    <div class="list-inline pull-right">
+    <li class="list-group-item"><%= link_to "Logout", session_path(current_user), method: 'delete' %></li>
+  </div>
     <% else %>
+    <div class="list-inline pull-left">
+      <li class="list-group-item"><%= link_to "Home", root_path %></li>
+      </div>
       <div class="list-inline pull-right">
-        <li class="list-group-item glyphicon glyphicon-search"><%= link_to '' %></li>
         <li class="list-group-item"><%= link_to "Log in", new_session_path %></li>
         <li class="list-group-item"><%= link_to "Sign Up", new_user_path %></li>
-      </div>
+      <% end %>
     </ul>
-  <% end %>
 </div>
 </nav>

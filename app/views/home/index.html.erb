@@ -1,7 +1,17 @@
-<%= form_tag :search, method: :get, class: "form-inline" do %>
-    <div class="form-group search-field">
-      <%= text_field_tag :q, "Search", class: "fomr-control", id: "Find Food" %>
-      <%= submit_tag "search", class: "btn btn-primary", id: "search " %>
-    </div>
+<header class="welcome-banner">
+  <br><br><br><br>
+  <div class="headline">
+    <% if logged_in? %>
+      <%= form_tag :search, method: :get, class: "form-inline" do %>
+        <div class="form-group search-field">
+          <%= text_field_tag :q, "Search", class: "fomr-control", id: "Find Food" %>
+          <%= submit_tag "search", class: "btn btn-primary", id: "search " %>
+          <% end %> <br><br>
+          <h7> ** For best results be as specific as you can in the type of food. For example specifiy the type of apple you want (Gala, Granny Smith, etc.) ** </h7>
+        </div>
+    <% else %>
+      <h3> Welcome to The Count! Log in and start your journey today! </h3>
+      <%= button_to "Create an Account", new_user_path, class: "btn btn-primary", method: "get" %>
     <%end%>
-    <h7> ** For best results be as specific as you can in the type of food. For example specifiy the type of apple you want (Gala, Granny Smith, etc.) ** </h7>
+  </div>
+</header>
