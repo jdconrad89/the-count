@@ -11,6 +11,8 @@
     <% if logged_in? %>
     <div class="list-inline pull-left">
       <li class="list-group-item"><%= link_to "Home", root_path %></li>
+      <li class="list-group-item"><%= link_to "Profile", profile_path %></li>
+      <li class="list-group-item"><%= link_to " Your Recipes"  %></li>
     </div>
     <div class="list-inline pull-right">
     <li class="list-group-item"><%= link_to "Logout", session_path(current_user), method: 'delete' %></li>

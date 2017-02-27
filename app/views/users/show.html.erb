@@ -1,8 +1,17 @@
+<div class="container">
 <main class="user-profile">
   <section>
     <h2>Welcome, <%= @user.name %>!</h2>
-
+    <% if !recipes? %>
+      <% current_user.recipes.each do |recipe| %>
+      <p>Recipe Name: <%= recipe.name %></p>
+      <p> Recipe Description: <%= recipe.description %></p>
+      <%= button_to "View Recipe", recipe_path(recipe.id), class: "btn btn-primary", method: "get" %>
+      <% end %>
+    <% else %>
       <p> You currently have no new recipes </p>
-  
+      <%= button_to "Create a Recipe", new_recipe_path, class: "btn btn-primary", method: "get" %>
+    <% end %>
   </section>
 </main>
+</div>

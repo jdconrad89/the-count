@@ -19,4 +19,8 @@ Rails.application.routes.draw do
 
   #### Search Resources ####
   get "/search",                          to: 'search#index', as: 'search'
+
+
+  #### Recipe Resources ###
+  resources :recipes,                     only: [:new, :create, :show]
 end

@@ -5,6 +5,8 @@ class CreateIngredients < ActiveRecord::Migration[5.0]
       t.string  :brand
       t.integer :calories
       t.integer :fat
+
+      t.timestamps
     end
   end
 end
