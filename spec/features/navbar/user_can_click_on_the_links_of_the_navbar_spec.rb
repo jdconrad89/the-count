@@ -32,13 +32,7 @@ RSpec.feature "When a user clicks on the links in the nav bar it takes you to th
 
   context "when a user is logged in it sees different buttons in the navbar" do
     before do
-      User.create(name: 'Waylon Jennings', email:'waylon@music.com', password: 'password' )
-      visit root_path
-      click_on 'Log in'
-      fill_in 'user[email]', with: 'waylon@music.com'
-      fill_in 'user[password]', with: 'password'
-      click_on 'Log me in!'
-      visit root_path
+      logged_in_user
     end
 
     it "user clicks on the logout button in the navbar" do
@@ -60,14 +54,14 @@ RSpec.feature "When a user clicks on the links in the nav bar it takes you to th
       expect(current_path).to eq(profile_path)
     end
 
-    xit "user clicks on the your recipes button in the navbar" do
+    it "user clicks on the your recipes button in the navbar" do
       visit root_path
 
       within("#user-left") do
         click_link("Your Recipes")
       end
 
-      expect(current_path).to eq()
+      expect(current_path).to eq(recipes_path)
     end
   end
 end
