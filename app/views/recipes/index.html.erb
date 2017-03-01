@@ -1,0 +1,19 @@
+<div class="container">
+  <h1> Welcome to your Recipe Box </h1>
+
+
+  <% if !recipes? %>
+  <div class="recipe-card">
+    <% current_user.recipes.each do |recipe| %>
+    <div class="card-block">
+      <p>Recipe Name: <%= recipe.name %></p>
+      <p> Recipe Description: <%= recipe.description %></p>
+      <%= button_to "View Recipe", recipe_path(recipe.id), class: "btn btn-primary", method: "get" %>
+    </div><br>
+    <% end %>
+  </div>
+  <% else %>
+  <p> You currently have no new recipes </p>
+  <% end %>
+  <%= button_to "Create a Recipe", new_recipe_path, class: "btn btn-primary", method: "get" %>
+</div>

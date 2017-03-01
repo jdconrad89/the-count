@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   #### Oauth Singn up routes ####
   get '/auth/facebook',                   as: :facebook_login
-  get 'auth/facebook/callback',           to: 'sessions#create'
+  get '/auth/facebook/callback',           to: 'sessions#create'
 
 
   #### Search Resources ####
@@ -22,5 +22,8 @@ Rails.application.routes.draw do
 
 
   #### Recipe Resources ###
-  resources :recipes,                     only: [:new, :create, :show]
+  resources :recipes,                     only: [:new, :create, :show, :update, :index]
+  namespace :recipes                      do
+    get "/:id/search",                  to: 'search#index', as: 'ingredients_search'
+  end
 end
