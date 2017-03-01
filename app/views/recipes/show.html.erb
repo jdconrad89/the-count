@@ -1,9 +1,52 @@
 <div class="container">
-<main class="recipe">
-  <section>
-      <p> <%= @recipe.name %></p>
-      <p> <%= @recipe.description %></p>
-      <%= button_to "Create a Recipe", new_recipe_path, class: "btn btn-primary", method: "get" %>
-  </section>
+
+  <div class="card-block">
+    <main class="recipe">
+      <section>
+        <h5> Recipe Name: <strong> <%= @recipe.name %> </strong></h5>
+        <h5> Description: <strong> <%= @recipe.description %></strong></h5>
+        <% if !has_ingredients?(@recipe) %>
+        <table class="table table-hover table-condensed">
+          <h5> Nutritional Information: </h5>
+          <thead>
+            <tr>
+              <th> Ingredient Name </th>
+              <th> Calories </th>
+              <th> Fat </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <% @recipe.ingredients.each do |ingredient|%>
+              <td> <%= ingredient.name %> </td>
+              <td> <%= ingredient.calories %> </td>
+              <td> <%= ingredient.fat %> </td>
+            </tr>
+            <% end %>
+          </tbody>
+          <% end %>
+        </table>
+      </div><br>
+      <%= form_tag recipes_ingredients_search_path, method: :get, class: "form-inline" do %>
+      <div class="form-group search-field">
+        <%= text_field_tag :q, "Search", class: "form-control", id: "Find Food" %>
+        <%= submit_tag "search", class: "btn btn-primary", id: "search " %>
+        <% end %> <br><br>
+        <h7> ** For best results be as specific as you can in the type of food. For example specifiy the type of apple you want (Gala, Granny Smith, etc.) ** </h7>
+      </div>
+    </div>
+    <div class="container">
+    <p> Preparation Instructions: </p>
+    <%= form_for @recipe, url: recipe_path, method: "patch" do |f| %>
+    <div class="form-group">
+      <%=  f.text_area :directions, class: "form-control", placeholder: recipe_directions(@recipe) %>
+      <%= hidden_field_tag :recipe_id, @recipe.id %>
+    </div>
+    <%= button_to "Update Directions", recipe_path, class: 'btn btn-primary', method: "patch" %>
+  </div>
+  <% end %>
+</div>
+</section>
 </main>
+</div>
 </div>
