@@ -9,19 +9,19 @@
 <div class="collapse navbar-collapse" id="navbar-collapse-1">
   <ul class="nav navbar-nav">
     <% if logged_in? %>
-    <div class="list-inline pull-left">
+    <div class="list-inline pull-left" id="user-left">
       <li class="list-group-item"><%= link_to "Home", root_path %></li>
       <li class="list-group-item"><%= link_to "Profile", profile_path %></li>
-      <li class="list-group-item"><%= link_to " Your Recipes"  %></li>
+      <li class="list-group-item"><%= link_to " Your Recipes", recipes_path  %></li>
     </div>
-    <div class="list-inline pull-right">
+    <div class="list-inline pull-right" id="user-right">
     <li class="list-group-item"><%= link_to "Logout", session_path(current_user), method: 'delete' %></li>
   </div>
     <% else %>
-    <div class="list-inline pull-left">
+    <div class="list-inline pull-left" id="guest-left">
       <li class="list-group-item"><%= link_to "Home", root_path %></li>
       </div>
-      <div class="list-inline pull-right">
+      <div class="list-inline pull-right" id="guest-right">
         <li class="list-group-item"><%= link_to "Log in", new_session_path %></li>
         <li class="list-group-item"><%= link_to "Sign Up", new_user_path %></li>
       <% end %>
