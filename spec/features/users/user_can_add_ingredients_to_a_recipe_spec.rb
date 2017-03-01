@@ -19,7 +19,7 @@ feature 'User adds ingredient to their recipe' do
       fill_in "q", with: "white bread"
       click_on "search"
 
-      within  first("#food_item") do
+      within first("#food_item") do
         click_on "Add to Recipe"
       end
 
