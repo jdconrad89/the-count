@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-feature 'User attempts to log in' do
+feature 'User attempts to create a new recipe' do
   before do
     logged_in_user
+    get_to_recipes_path
   end
 
   context 'when a visitor visits their profile' do
@@ -15,7 +16,7 @@ feature 'User attempts to log in' do
       fill_in 'recipe[description]', with: 'best sandwich ever'
       click_on 'Create Recipe'
 
-      expect(page).to have_current_path(profile_path)
+      expect(page).to have_current_path(recipes_path)
 
       within("#user-left") do
         click_link("Your Recipes")

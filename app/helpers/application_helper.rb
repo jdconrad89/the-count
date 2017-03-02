@@ -23,4 +23,20 @@ module ApplicationHelper
     recipe.ingredients.nil?
   end
 
+  def total_calories(recipe)
+    calories = []
+    recipe.ingredients.each do |ingredient|
+      calories << ingredient.calories
+    end
+    calories.reduce(:+)
+  end
+
+  def total_fat(recipe)
+    fat = []
+    recipe.ingredients.each do |ingredient|
+      fat << ingredient.fat
+    end
+    fat.reduce(:+)
+  end
+
 end

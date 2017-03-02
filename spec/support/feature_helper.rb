@@ -11,10 +11,17 @@ module FeatureHelper
   end
 
   def create_a_recipe
+    get_to_recipes_path
     click_on "Create a Recipe"
     fill_in 'recipe[name]', with: 'grilled cheese'
     fill_in 'recipe[description]', with: 'best sandwich ever'
     click_on 'Create Recipe'
+  end
+
+  def get_to_recipes_path
+    within("#user-left") do
+      click_link("Your Recipes")
+    end
   end
 
 end

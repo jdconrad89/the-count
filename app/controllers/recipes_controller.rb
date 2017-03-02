@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.create(recipe_params)
     @recipe.user_id = current_user.id
     if @recipe.save
-      redirect_to profile_path, sucess: "You have successfully created a recipe! Let's get started on adding some ingredients!"
+      redirect_to recipes_path, sucess: "You have successfully created a recipe! Let's get started on adding some ingredients!"
     else
       redirect_to new_recipe_path, danger: "Missing information for your recipe please try again."
     end
