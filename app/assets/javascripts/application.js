@@ -38,5 +38,5 @@ document.addEventListener('DOMContentLoaded', function() {
       var data = e.dataTransfer.getData('source')
       var element = document.getElementById(data)
       e.target.appendChild(element)
-  })
+  }
 })
