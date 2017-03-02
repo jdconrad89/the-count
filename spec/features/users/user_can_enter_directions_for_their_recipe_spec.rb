@@ -16,15 +16,12 @@ feature 'User adds ingredient to their recipe' do
       click_on "View Recipe"
       expect(page).to have_current_path(recipe_path(Recipe.last.id))
 
-      fill_in "q", with: "white bread"
-      click_on "search"
-
-      within first("#food_item") do
-        click_on "Add to Recipe"
-      end
+      save_and_open_page
+      fill_in "#recipe_directions", with: "Grilled Cheese is Amazing"
+      click_on "Update Directions"
 
       expect(page).to have_current_path(recipe_path(Recipe.last.id))
-      expect(page).to have_content("White Bread - 1 slice, large")
+      expect(page).to have_content("Grilled Cheese is Amazing")
     end
   end
 end

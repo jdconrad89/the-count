@@ -20,7 +20,7 @@ module FeatureHelper
 
   def get_to_recipes_path
     within("#user-left") do
-      click_link("Your Recipes")
+      click_link("Recipe Box")
     end
   end
 

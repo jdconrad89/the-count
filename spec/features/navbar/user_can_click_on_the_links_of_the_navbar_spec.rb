@@ -58,7 +58,7 @@ RSpec.feature "When a user clicks on the links in the nav bar it takes you to th
       visit root_path
 
       within("#user-left") do
-        click_link("Your Recipes")
+        click_link("Recipe Box")
       end
 
       expect(current_path).to eq(recipes_path)

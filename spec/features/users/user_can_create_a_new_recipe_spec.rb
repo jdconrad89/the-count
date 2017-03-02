@@ -19,7 +19,7 @@ feature 'User attempts to create a new recipe' do
       expect(page).to have_current_path(recipes_path)
 
       within("#user-left") do
-        click_link("Your Recipes")
+        click_link("Recipe Box")
       end
       expect(page).to have_current_path(recipes_path)
 
