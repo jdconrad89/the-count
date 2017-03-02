@@ -1,10 +1,7 @@
 <div class="container">
-   <div class="drop_box">
-     <h6> Add Your Ingredient Here </h6>
-   </div>
-
 <table class="table table-hover table-condensed">
-   <h2>Possible Matches for "<%= @item %>" </h2>
+   </div>
+   <h2 style="position: relative; left: 15%;">Possible Matches for "<%= @item %>" </h2>
   	<thead>
   		<tr>
         <th> Name</th>
@@ -15,14 +12,14 @@
   		</tr>
   	</thead>
   	<tbody>
-      <tr draggable="true" id="food_item">
           <% @food_items.each do |food_item| %>
+          <tr draggable="true" id="food_item">
   		      <td> <%= food_item.name %> </td>
   		      <td> <%= food_item.brand %> </td>
   		      <td> <%= food_item.calories %> </td>
             <td> <%= food_item.fat %> </td>
   		      <td> <%= food_item.serving_size %> </td>
-            <td> <%=  button_to "Add to Recipe", recipe_path(food_name: "#{food_item.name}", food_brand: "#{food_item.brand}", food_calories: "#{food_item.calories}", food_fat: "#{food_item.fat}", food_serving: "#{food_item.serving_size}"), class: "btn btn-primary", method: "patch" %> </td>
+            <td> <%=  button_to "Add to Recipe", recipe_path(food_name: "#{food_item.name}", food_brand: "#{food_item.brand}", food_calories: "#{food_item.calories}", food_fat: "#{food_item.fat}", food_serving: "#{food_item.serving_size}"), class: "btn btn-primary", method: :patch%> </td>
      </tr>
       <% end %>
    </tbody>
