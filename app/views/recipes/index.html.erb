@@ -1,13 +1,13 @@
-<div class="container">
-  <h1> Welcome to your Recipe Box </h1>
+<div class="container" >
+  <h1 style="position: relative; left: 30%;"> Welcome to your Recipe Box </h1>
 
 
   <% if !recipes? %>
   <div class="recipe-card">
     <% current_user.recipes.each do |recipe| %>
-    <div class="card-block">
-      <p>Recipe Name: <%= recipe.name %></p>
-      <p> Recipe Description: <%= recipe.description %></p>
+    <div class="card-block" style="position: relative; left: 25%;">
+      <h5>Recipe Name: <strong><%= recipe.name %></strong></h5>
+      <h5> Recipe Description: <strong><%= recipe.description %></strong></h5>
       <%= button_to "View Recipe", recipe_path(recipe.id), class: "btn btn-primary", method: "get" %>
     </div><br>
     <% end %>
@@ -15,5 +15,8 @@
   <% else %>
   <p> You currently have no new recipes </p>
   <% end %>
+  <h5 style="position: relative; left: 36%;"> Want to create a new recipe? Click Below and get started!</h5>
+  <div class ="create-recipe" style="position: relative; left: 44.5%;">
   <%= button_to "Create a Recipe", new_recipe_path, class: "btn btn-primary", method: "get" %>
+</div>
 </div>

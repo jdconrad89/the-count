@@ -1,9 +1,7 @@
-<div class="container">
-<main class="user-profile">
-  <section>
-    <h2>Welcome, <%= @user.name %>!</h2>
-    <h4> You have created <%= recipe_count %> recipes </h4>
-  </section>
-  <%= button_to "Create a Recipe", new_recipe_path, class: "btn btn-primary", method: "get" %>
-</main>
-</div>
+<header class="welcome-banner">
+  <br><br><br><br>
+  <div class="headline">
+      <h3> Welcome to The Count, <%=@user.name %>! </h3>
+      <%= button_to "View Your Recipes", recipes_path, class: "btn btn-primary", method: "get" %>
+  </div>
+</header>

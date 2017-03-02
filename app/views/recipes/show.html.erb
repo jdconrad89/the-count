@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="card-block">
+  <div class="card-block" style="position: relative; left: 25%;">
     <main class="recipe">
       <section>
         <h5> Recipe Name: <strong> <%= @recipe.name %> </strong></h5>
@@ -25,15 +25,23 @@
             <% end %>
           </tbody>
           <% end %>
+          <tfoot>
+            <tr>
+              <td> <strong> Total: </strong> </td>
+              <td> <%= total_calories(@recipe) %> </td>
+              <td> <%= total_fat(@recipe) %> </td>
+            </tr>
+          </tfoot>
+
         </table>
       </div><br>
       <%= form_tag recipes_ingredients_search_path, method: :get, class: "form-inline" do %>
-      <div class="form-group search-field">
+      <div class="form-group search-field" style="position: relative; left: 38%;">
         <%= text_field_tag :q, "Search", class: "form-control", id: "Find Food" %>
         <%= submit_tag "search", class: "btn btn-primary", id: "search " %>
         <% end %> <br><br>
-        <h7> ** For best results be as specific as you can in the type of food. For example specifiy the type of apple you want (Gala, Granny Smith, etc.) ** </h7>
       </div>
+      <h7 style="position: relative; left: 15%;"> ** For best results be as specific as you can in the type of food. For example specifiy the type of apple you want (Gala, Granny Smith, etc.) ** </h7>
     </div>
     <div class="container">
     <p> Preparation Instructions: </p>
@@ -42,7 +50,7 @@
       <%=  f.text_area :directions, class: "form-control", placeholder: recipe_directions(@recipe) %>
       <%= hidden_field_tag :recipe_id, @recipe.id %>
     </div>
-    <%= button_to "Update Directions", recipe_path, class: 'btn btn-primary', method: "patch" %>
+    <%= button_to "Update Directions", recipe_path, class: 'btn btn-success', method: "patch" %>
   </div>
   <% end %>
 </div>
