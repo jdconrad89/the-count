@@ -37,17 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.target.className === 'drop_box') {
       var data = e.dataTransfer.getData('source')
       var element = document.getElementById(data)
-      e.target.appendChild(element, function(element){
-        $.ajax({
-                 type: 'Patch',
-                 url: "../recipes/:id/update",
-                 success:function(element){
-                  alert(element);
-                 }
-      })
-
-
-    }
-
+      e.target.appendChild(element)
   })
 })
