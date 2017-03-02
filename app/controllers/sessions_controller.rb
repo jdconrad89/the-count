@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
   end
 
   def oauth_data
-    request.env["omnioauth.auth"]
+    request.env["omniauth.auth"]
   end
 
   def oauth_user_data
