@@ -4,7 +4,7 @@ Over the past few years I have tried many different diets and have found that fo
 
 Enter The Count. 
 
-[the count](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjMnNSqhffSAhUIwlQKHcn0BCgQjRwIBw&url=http%3A%2F%2Fmuppet.wikia.com%2Fwiki%2FCount_von_Count&psig=AFQjCNHiA1tzV0ev03k9ZwglbzONDHXRgg&ust=1490716359759679)
+[![the count](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjMnNSqhffSAhUIwlQKHcn0BCgQjRwIBw&url=http%3A%2F%2Fmuppet.wikia.com%2Fwiki%2FCount_von_Count&psig=AFQjCNHiA1tzV0ev03k9ZwglbzONDHXRgg&ust=1490716359759679)
 
 The Count was created with the hope of making eating healthy easier for the everyday person. 
 
