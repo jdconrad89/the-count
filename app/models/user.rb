@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   def self.user_information(user_data)
     user_info = user_data[:info]
-    {name: user_info[:name], email: user_info[:email], token: user_data[:token], social_login: true}
+    {name: user_info[:name], email: user_info[:email], avatar: user_info[:image], token: user_data[:token], social_login: true}
   end
 
   def social_login?

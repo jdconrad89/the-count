@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301232359) do
+ActiveRecord::Schema.define(version: 20170605232314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170301232359) do
     t.bigint   "uid"
     t.boolean  "social_login",    default: false
     t.text     "token"
+    t.text     "avatar"
   end
 
   add_foreign_key "recipe_ingredients", "ingredients"

@@ -15,6 +15,11 @@
       <li class="list-group-item"><%= link_to "Recipe Box", recipes_path  %></li>
     </div>
     <div class="list-inline pull-right" id="user-right">
+      <% if missing_avatar? %>
+        <li class="list-group-item"><%= image_tag("missing_user_avatar.png", class: "img-circle") %>
+      <% else %>
+        <li class="list-group-item"><%= image_tag(current_user.avatar, class: "img-circle") %>
+      <% end %>
     <li class="list-group-item"><%= link_to "Logout", session_path(current_user), method: 'delete' %></li>
   </div>
     <% else %>

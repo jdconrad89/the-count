@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
       var data = e.dataTransfer.getData('source')
       var element = document.getElementById(data)
       e.target.appendChild(element)
-      $.ajax({
-               type: 'GET',
-               url: "../messages/drew",
+      return $.ajax({
+               type: 'Patch',
+               url: "/recipe/" + ,
                success:function(data){
                 alert(data);
                }
