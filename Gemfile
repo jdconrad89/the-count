@@ -23,6 +23,8 @@ gem 'omniauth-facebook'
 gem 'nutritionix'
 gem 'bcrypt', '~> 3.1.7'
 gem 'simplecov', :require => false, :group => :test
+gem 'newrelic_rpm'
+
 
 
 group :development, :test do
@@ -32,7 +34,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'database_cleaner'
-  gem 'faker'
+  gem 'faker', git: "https://github.com/stympy/faker"
   gem 'shoulda-matchers'
 end
 

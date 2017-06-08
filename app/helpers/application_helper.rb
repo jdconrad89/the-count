@@ -39,4 +39,8 @@ module ApplicationHelper
     fat.reduce(:+)
   end
 
+  def missing_avatar?
+    current_user.avatar.nil? || current_user.avatar.empty?
+  end
+
 end
