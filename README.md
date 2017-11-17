@@ -4,7 +4,7 @@ Over the past few years I have tried many different diets and have found that fo
 
 Enter The Count. 
 
-[![the count](http://vignette3.wikia.nocookie.net/muppet/images/3/3c/CT-p0001-ST.jpg/revision/latest?cb=20060205225316)
+![the count](http://vignette3.wikia.nocookie.net/muppet/images/3/3c/CT-p0001-ST.jpg/revision/latest?cb=20060205225316)
 
 No not that Count...
 
