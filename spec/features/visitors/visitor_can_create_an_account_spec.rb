@@ -19,8 +19,8 @@ feature 'Visitor creates an account' do
 
     scenario 'the user should see a sign up form' do
       expect(page).to have_content('Have an account?')
-      expect(page).to have_selector('Log in')
-      expect(page).to have_selector('Log in with Facebook')
+      expect(page).to have_selector(:link_or_button, 'Log in')
+      expect(page).to have_selector(:link_or_button, 'Log in with Facebook')
       expect(page).to have_field(:user_name)
       expect(page).to have_field(:user_email)
       expect(page).to have_field(:user_password)

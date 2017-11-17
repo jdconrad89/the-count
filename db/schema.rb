@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605232314) do
+ActiveRecord::Schema.define(version: 20171117200648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,20 @@ ActiveRecord::Schema.define(version: 20170605232314) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "serving_size"
+  end
+
+  create_table "meal_ingredients", force: :cascade do |t|
+    t.integer "ingredient_id"
+    t.integer "meal_id"
+    t.index ["ingredient_id"], name: "index_meal_ingredients_on_ingredient_id", using: :btree
+    t.index ["meal_id"], name: "index_meal_ingredients_on_meal_id", using: :btree
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.integer "name",    default: 0
+    t.date    "date"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_meals_on_user_id", using: :btree
   end
 
   create_table "recipe_ingredients", force: :cascade do |t|
@@ -55,6 +69,9 @@ ActiveRecord::Schema.define(version: 20170605232314) do
     t.text     "avatar"
   end
 
+  add_foreign_key "meal_ingredients", "ingredients"
+  add_foreign_key "meal_ingredients", "meals"
+  add_foreign_key "meals", "users"
   add_foreign_key "recipe_ingredients", "ingredients"
   add_foreign_key "recipe_ingredients", "recipes"
   add_foreign_key "recipes", "users"

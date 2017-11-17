@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :password, confirmation: true
 
   has_many :recipes
+  has_many :meals 
 
   def self.find_or_create_by_omniauth(user_data)
     user = find_or_create_by(uid: user_data[:uid])
