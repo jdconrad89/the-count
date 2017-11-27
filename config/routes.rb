@@ -21,9 +21,15 @@ Rails.application.routes.draw do
   get "/search",                           to: 'search#index', as: 'search'
 
 
-  #### Recipe Resources ###
+  #### Recipe Resources ####
   resources :recipes,                      only: [:new, :create, :show, :update, :index]
   namespace :recipes                       do
+    get "/:id/search",                     to: 'search#index', as: 'ingredients_search'
+  end
+
+  #### Meal Resources ####
+  resources :meals,                        only: [:new, :create, :show, :update, :index]
+  namespace :meals                         do
     get "/:id/search",                     to: 'search#index', as: 'ingredients_search'
   end
 end
