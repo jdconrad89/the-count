@@ -1,0 +1,15 @@
+<div class="container" >
+  <h1 style="position: relative; left: 42%;"> Your Meals </h1>
+
+
+  <% if !meals? %>
+  <div class="meal-card">
+
+  <% else %>
+  <p style="position: relative; left: 38%;"> You currently have no meals  </p>
+  <% end %>
+  <h5 style="position: relative; left: 38%;"> Want to add a meal? Click Below and get started!</h5>
+  <div class ="create-recipe" style="position: relative; left: 44.5%;">
+  <%= button_to "Add a Meal", new_meal_path, class: "btn btn-primary", method: "get" %>
+</div>
+</div>
