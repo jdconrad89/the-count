@@ -3,6 +3,10 @@ module ApplicationHelper
     !current_user.nil?
   end
 
+  def meals?
+    current_user.meals.count == 0
+  end
+
   def recipes?
     current_user.recipes.count == 0
   end
