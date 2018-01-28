@@ -8,9 +8,7 @@ class Permission
     @user       = user || User.new
     @controller = controller
     @action     = action
-
   end
-
 
   def authorized?
     case
@@ -44,5 +42,4 @@ class Permission
   def home_controller_and_has_action_index?
     controller == 'home' && action.in?(%w(index))
   end
-
 end
