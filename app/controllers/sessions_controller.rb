@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     if with_facebook?
-      @user = User.find_or_create_by_omniauth(oauth_user_data)
+      @user = User.new.find_or_create_by_omniauth(oauth_user_data)
       successful_login
     elsif !with_facebook?
       manual_login
@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
     reset_session
     redirect_to root_path
   end
-
 
   private
 

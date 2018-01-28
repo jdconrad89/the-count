@@ -30,7 +30,6 @@ class RecipesController < ApplicationController
     @recipes = current_user.recipes
   end
 
-
   private
 
   def recipe_params
@@ -62,7 +61,7 @@ class RecipesController < ApplicationController
   end
 
   def update_ingredients
-    @ingredient = Ingredient.find_or_create_by(name: params[:food_name])
+    @ingredient              = Ingredient.find_or_create_by(name: params[:food_name])
     @ingredient.brand        = params[:food_brand]
     @ingredient.calories     = params[:food_calories]
     @ingredient.fat          = params[:food_fat]
@@ -84,6 +83,4 @@ class RecipesController < ApplicationController
       fail_to_update
     end
   end
-
-
 end

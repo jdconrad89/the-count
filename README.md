@@ -1,24 +1,14 @@
-# README
+# Welcome to The Count
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Over the past few years I have tried many different diets and have found that for the most part all of these diet companies held the power and control. If you wanted to lose weight you had to pay their membership fees, buy their food, utilize their recipes etc. I constanly was finding that there really wasn't a way to find out the nutritional information for my own recipes. 
 
-Things you may want to cover:
+Enter The Count. 
 
-* Ruby version
+![the count](http://vignette3.wikia.nocookie.net/muppet/images/3/3c/CT-p0001-ST.jpg/revision/latest?cb=20060205225316)
 
-* System dependencies
+No not that Count...
 
-* Configuration
+The Count was created with the hope of making eating healthy easier for the everyday person. 
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
