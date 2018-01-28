@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     if with_facebook?
-      @user = User.find_or_create_by_omniauth(oauth_user_data)
+      facebook_user = User.new
+      byebug
+      @user = facebook_user.find_or_create_by_omniauth(oauth_user_data)
       successful_login
     elsif !with_facebook?
       manual_login
