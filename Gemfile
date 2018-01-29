@@ -24,6 +24,8 @@ gem 'nutritionix'
 gem 'bcrypt', '~> 3.1.7'
 gem 'simplecov', :require => false, :group => :test
 gem 'newrelic_rpm'
+gem "simple_calendar", "~> 2.0"
+
 
 
 
