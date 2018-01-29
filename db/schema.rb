@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171117200648) do
+ActiveRecord::Schema.define(version: 20180128234315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20171117200648) do
     t.integer "meal_id"
     t.index ["ingredient_id"], name: "index_meal_ingredients_on_ingredient_id", using: :btree
     t.index ["meal_id"], name: "index_meal_ingredients_on_meal_id", using: :btree
+  end
+
+  create_table "meal_recipes", force: :cascade do |t|
+    t.integer "recipe_id"
+    t.integer "meal_id"
+    t.index ["meal_id"], name: "index_meal_recipes_on_meal_id", using: :btree
+    t.index ["recipe_id"], name: "index_meal_recipes_on_recipe_id", using: :btree
   end
 
   create_table "meals", force: :cascade do |t|
@@ -71,6 +78,8 @@ ActiveRecord::Schema.define(version: 20171117200648) do
 
   add_foreign_key "meal_ingredients", "ingredients"
   add_foreign_key "meal_ingredients", "meals"
+  add_foreign_key "meal_recipes", "meals"
+  add_foreign_key "meal_recipes", "recipes"
   add_foreign_key "meals", "users"
   add_foreign_key "recipe_ingredients", "ingredients"
   add_foreign_key "recipe_ingredients", "recipes"
