@@ -1,5 +1,4 @@
 class Permission
-
   extend Forwardable
 
   def_delegators :user

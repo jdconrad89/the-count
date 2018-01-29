@@ -1,5 +1,4 @@
 class FoodService
-
   def find_food(food)
     find_by_title(food)
   end
