@@ -30,5 +30,4 @@ class MealsController < ApplicationController
   def found_meal
     Meal.find(params[:id])
   end
-
 end
