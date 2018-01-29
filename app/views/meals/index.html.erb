@@ -1,4 +1,13 @@
 <div class="container" >
+  <%= month_calendar do |date| %>
+  <%= date.day %>
+
+  <% @meals.each do |meal| %>
+   <div>
+     <%= meal.name %>
+   </div>
+ <% end %>
+<% end %>
   <h1 style="position: relative; left: 42%;"> Your Meals </h1>
 
 
